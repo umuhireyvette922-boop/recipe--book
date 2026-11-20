@@ -22,7 +22,7 @@ function useRecipes() {
   }, []);
 
   const filteredRecipes = recipes.filter((recipe) =>
-    recipe.name.toLowerCase().includes(search.toLowerCase())
+    (recipe.name || "").toLowerCase().includes(search.toLowerCase())
   );
 
   return {
